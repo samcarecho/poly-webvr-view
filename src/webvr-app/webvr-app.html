@@ -1,0 +1,33 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="webvr-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class WebvrApp extends Polymer.Element {
+      static get is() { return 'webvr-app'; }
+
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'webvr-app'
+          }
+        };
+      }
+
+    }
+    window.customElements.define(WebvrApp.is, WebvrApp);
+  </script>
+</dom-module>

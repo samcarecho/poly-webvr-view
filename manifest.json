@@ -1,0 +1,7 @@
+{
+  "name": "webvr-viewer",
+  "short_name": "webvr-viewer",
+  "description": "A simple Polymer 2.0 based WebVR viewer codeLab.",
+  "start_url": "/",
+  "display": "standalone"
+}
