@@ -1,0 +1,134 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="style.css">
+
+<dom-module id="webvr-viewer">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <div id="vrview"></div>
+  </template>
+
+  <script>
+    (function() {
+
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+
+      /**
+     * @customElement
+     * @polymer
+     */
+      class WebvrViewer extends Polymer.Element {
+        static get is() { return 'webvr-viewer'; }
+
+        constructor() {
+          super();
+
+          this.scene = {
+            petra: {
+              image: 'assets/gallery/petra.jpg',
+              preview: 'assets/gallery/petra-preview.jpg'
+            }
+          };
+        }
+
+        connectedCallback() {
+          super.connectedCallback();
+
+          this.vrView = new VRView.Player(this.$.vrview, {
+            width: w,
+            height: h,
+            image: this.rootPath + this.image,
+            is_stereo: false,
+            is_autopan_off: true,
+          });
+
+          this.vrView.on('ready', this._onVRViewReady.bind(this));
+          this.vrView.on('modechange', this._onModeChange.bind(this));
+          this.vrView.on('getposition', this._onGetPosition.bind(this));
+          this.vrView.on('error', this._onVRViewError.bind(this));
+        }
+
+        static get properties() {
+          return {
+            width: {
+              type: Number,
+              value: w,
+              observer: '_widthChanged'
+            },
+            height: {
+              type: Number,
+              value: h,
+              observer: '_heightChanged'
+            },
+            preview: {
+              type: String,
+              //value: this.scenes.petra.preview
+            },
+            image: {
+              type: String,
+              observer: '_imageChanged'
+            },
+            isVRReady: {
+              type: Boolean,
+              value: false
+            }
+          };
+        }
+
+        // vrView methods
+        _loadScene(image) {
+          console.debug(WebvrViewer.is, 'loadScene', image);
+
+          // Set the image
+          this.vrView.setContent({
+            image: this.rootPath + image,
+            //preview: preview,
+            is_autopan_off: true
+          });
+
+          this.vrView.getPosition();
+        }
+        _onVRViewReady(e) {
+          console.debug(WebvrViewer.is, 'onVRViewReady');
+          this.set('isVRReady', true);
+
+          this._loadScene(this.image);
+        }
+        _onModeChange(e) {
+          console.debug(this.is, 'onModeChange', e.mode);
+        }
+        _onVRViewError(e) {
+          console.debug(this.is, 'Error! %s', e.message);
+        }
+        _onGetPosition(p) {
+          console.debug(WebvrViewer.is, '_onGetPosition', p);
+        }
+
+        _widthChanged(newValue) {
+          this.width = newValue;
+        }
+        _heightChanged(newValue) {
+          this.height = newValue;
+        }
+        _imageChanged(newValue) {
+          console.debug(WebvrViewer.is, '_imageChanged', newValue);
+
+          this.image = newValue;
+          if (this.isVRReady) {
+            this._loadScene(this.image);
+          }
+        }
+
+
+      }
+      window.customElements.define(WebvrViewer.is, WebvrViewer);
+    })();
+  </script>
+
+  <script src="lib/vrview.js"></script>
+</dom-module>

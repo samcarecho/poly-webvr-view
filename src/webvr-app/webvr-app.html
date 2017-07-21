@@ -1,13 +1,18 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../webvr-viewer/webvr-viewer.html">
+<link rel="import" href="../image-gallery/image-gallery.html">
 
 <dom-module id="webvr-app">
-  <template>
+  <template strip-whitespace>
     <style>
       :host {
         display: block;
       }
     </style>
-    <h2>Hello [[prop1]]!</h2>
+
+    <webvr-viewer image="[[image]]"></webvr-viewer>
+    <image-gallery image="{{image}}"></image-gallery>
+
   </template>
 
   <script>
@@ -20,9 +25,9 @@
 
       static get properties() {
         return {
-          prop1: {
+          image: {
             type: String,
-            value: 'webvr-app'
+            value: 'assets/gallery/petra.jpg'
           }
         };
       }
