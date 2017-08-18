@@ -33,5 +33,15 @@
     "html": {"minify": true},
     "addServiceWorker": true,
     "addPushManifest": true
+  },{
+    "name": "es6-bundled",
+    "bundle": true,
+    "browserCapabilities": ["es2015"],
+    "js": {"minify": true},
+    "css": {"minify": true},
+    "html": {"minify": true},
+    "addServiceWorker": true,
+    "addPushManifest": true,
+    "insertPrefetchLinks": true
   }]
 }
