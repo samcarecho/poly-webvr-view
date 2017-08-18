@@ -1,0 +1,256 @@
+{
+  "src/webvr-app/webvr-app.html": {
+    "bower_components/polymer/polymer-element.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/element-mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/boot.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/settings.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/resolve-url.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/case-map.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/style-gather.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/elements/dom-module.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/property-effects.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/path.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/property-accessors.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/async.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/template-stamp.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "src/webvr-viewer/webvr-viewer.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "src/webvr-viewer/style.css": {
+      "type": "document",
+      "weight": 1
+    },
+    "src/webvr-viewer/lib/vrview.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/image-gallery/image-gallery.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/elements/dom-repeat.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/templatize.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/mutable-data.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/debounce.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/flush.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/gesture-event-listeners.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/gestures.html": {
+      "type": "document",
+      "weight": 1
+    }
+  },
+  "src/webvr-viewer/webvr-viewer.html": {
+    "bower_components/polymer/polymer-element.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/element-mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/boot.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/settings.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/resolve-url.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/case-map.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/style-gather.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/elements/dom-module.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/property-effects.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/path.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/property-accessors.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/async.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/template-stamp.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "src/webvr-viewer/style.css": {
+      "type": "document",
+      "weight": 1
+    },
+    "src/webvr-viewer/lib/vrview.js": {
+      "type": "script",
+      "weight": 1
+    }
+  },
+  "src/image-gallery/image-gallery.html": {
+    "bower_components/polymer/polymer-element.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/element-mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/boot.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/settings.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/resolve-url.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/case-map.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/style-gather.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/elements/dom-module.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/property-effects.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/path.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/property-accessors.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/async.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/template-stamp.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/elements/dom-repeat.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/templatize.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/mutable-data.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/debounce.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/flush.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/gesture-event-listeners.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/gestures.html": {
+      "type": "document",
+      "weight": 1
+    }
+  }
+}

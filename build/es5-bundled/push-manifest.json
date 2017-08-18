@@ -1,0 +1,14 @@
+{
+  "src/webvr-app/webvr-app.html": {
+    "src/webvr-viewer/webvr-viewer.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "src/image-gallery/image-gallery.html": {
+      "type": "document",
+      "weight": 1
+    }
+  },
+  "src/webvr-viewer/webvr-viewer.html": {},
+  "src/image-gallery/image-gallery.html": {}
+}
