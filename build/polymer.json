@@ -35,21 +35,8 @@
         "minify": true
       },
       "addServiceWorker": true,
-      "addPushManifest": true
-    },
-    {
-      "name": "es6-unbundled",
-      "js": {
-        "minify": true
-      },
-      "css": {
-        "minify": true
-      },
-      "html": {
-        "minify": true
-      },
-      "addServiceWorker": true,
-      "addPushManifest": true
+      "addPushManifest": true,
+      "insertPrefetchLinks": true
     },
     {
       "name": "es6-bundled",
