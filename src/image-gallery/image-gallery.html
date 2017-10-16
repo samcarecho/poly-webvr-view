@@ -97,7 +97,6 @@
           </li>
         </template>
     </ul>
-
   </template>
 
   <script>
@@ -162,12 +161,16 @@
 
       sceneSelected(ev) {
         console.debug(ImageGallery.is, 'sceneSelected', ev);
+        console.debug(ImageGallery.is, 'sceneSelected model', ev.model);
+        console.debug(ImageGallery.is, 'sceneSelected target', ev.target.parentNode);
 
-        let el = ev.path[0];
+        let el = ev.target;
         let sib = el.nextElementSibling;
+        let item = ev.model.item;
+        //let target = ev.target;
 
         for (let i = 0; i < this.scenes.length; i++) {
-          if (this.scenes[i].id === el.id) {
+          if (this.scenes[i].id === item.id) {
             this.set('image', this.scenes[i].image);
           }
         }

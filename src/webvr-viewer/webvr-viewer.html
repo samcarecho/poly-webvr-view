@@ -36,21 +36,23 @@
           };
         }
 
+        ready() {
+          super.ready();
+
+          window.addEventListener('resize', (evt) => {
+            console.debug(WebvrViewer.is, 'onResize', );
+
+            this.width = window.innerWidth;
+            this.height = window.innerHeight;
+
+            this._resetPlayerDimensions(this.width, this.height);
+          });
+        }
+
         connectedCallback() {
           super.connectedCallback();
 
-          this.vrView = new VRView.Player(this.$.vrview, {
-            width: w,
-            height: h,
-            image: this.rootPath + this.image,
-            is_stereo: false,
-            is_autopan_off: true,
-          });
-
-          this.vrView.on('ready', this._onVRViewReady.bind(this));
-          this.vrView.on('modechange', this._onModeChange.bind(this));
-          this.vrView.on('getposition', this._onGetPosition.bind(this));
-          this.vrView.on('error', this._onVRViewError.bind(this));
+          this._setPlayerDimensions(this.width, this.height);
         }
 
         static get properties() {
@@ -80,6 +82,7 @@
           };
         }
 
+
         // vrView methods
         _loadScene(image) {
           console.debug(WebvrViewer.is, 'loadScene', image);
@@ -93,18 +96,22 @@
 
           this.vrView.getPosition();
         }
+
         _onVRViewReady(e) {
           console.debug(WebvrViewer.is, 'onVRViewReady');
-          this.set('isVRReady', true);
 
+          this.set('isVRReady', true);
           this._loadScene(this.image);
         }
+
         _onModeChange(e) {
-          console.debug(this.is, 'onModeChange', e.mode);
+          console.debug(WebvrViewer.is, 'onModeChange', e.mode);
         }
+
         _onVRViewError(e) {
-          console.debug(this.is, 'Error! %s', e.message);
+          console.debug(WebvrViewer.is, 'Error! %s', e.message);
         }
+
         _onGetPosition(p) {
           console.debug(WebvrViewer.is, '_onGetPosition', p);
         }
@@ -112,9 +119,11 @@
         _widthChanged(newValue) {
           this.width = newValue;
         }
+
         _heightChanged(newValue) {
           this.height = newValue;
         }
+
         _imageChanged(newValue) {
           console.debug(WebvrViewer.is, '_imageChanged', newValue);
 
@@ -124,6 +133,25 @@
           }
         }
 
+        _setPlayerDimensions(width, height) {
+          this.vrView = new VRView.Player(this.$.vrview, {
+            width: width,
+            height: height,
+            image: this.rootPath + this.image,
+            is_stereo: false,
+            is_autopan_off: true,
+          });
+
+          this.vrView.on('ready', this._onVRViewReady.bind(this));
+          this.vrView.on('modechange', this._onModeChange.bind(this));
+          this.vrView.on('getposition', this._onGetPosition.bind(this));
+          this.vrView.on('error', this._onVRViewError.bind(this));
+        }
+
+        _resetPlayerDimensions(width, height) {
+          this.$.vrview.innerHTML = '';
+          this. _setPlayerDimensions(width, height);
+        }
 
       }
       window.customElements.define(WebvrViewer.is, WebvrViewer);
