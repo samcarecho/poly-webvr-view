@@ -13,48 +13,50 @@
         background-color: transparent;
       }
 
-      ul.carousel {
+      div.carousel {
         display: flex;
-        width: 720px;
+        max-width: 720px;
         margin: 20px auto;
         padding: 0;
-        justify-content: center;
-        overflow: auto;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+        overflow: hidden;
       }
 
       /* MOBILE */
       @media screen and (max-width: 700px) {
-        ul.carousel {
+        div.carousel {
           width: 100vw;
-          justify-content: flex-start;
+          -webkit-justify-content: space-around;
+          justify-content: space-around;;
         }
 
-        ul.carousel li:first-child {
+        div.carousel li:first-child {
           padding-left: 0;
         }
 
-        ul.carousel li:last-child {
+        div.carousel li:last-child {
           padding-right: 0;
         }
       }
 
-      ul.carousel li {
+      div.carousel div {
         list-style: none;
         margin: 0;
         padding: 0 10px;
         display: inline-block;
       }
-      ul.carousel li {
+      div.carousel div {
         display: inline-block;
         text-align: center;
         color: #999;
         text-decoration: none;
       }
-      ul.carousel li span.current {
+      div.carousel div span.current {
         display: block;
         background-color: rgba(0,0,255,0.2);
       }
-      ul.carousel li img {
+      div.carousel div img {
         width: 100px;
         height: 100px;
         -webkit-border-radius:;
@@ -62,10 +64,10 @@
         border-radius: 50%;
         cursor: pointer;
       }
-      ul.carousel li img.current {
+      div.carousel div img.current {
         border: 2px solid rgba(0,0,255,0.2);
       }
-      ul.carousel li span {
+      div.carousel div span {
         display: block;
         padding: 5px;
         color: #111;
@@ -74,11 +76,11 @@
       }
       /* MOBILE */
       @media screen and (max-width: 700px) {
-        ul.carousel li img {
+        div.carousel div img {
           width: 75px;
           height: 75px;
         }
-        ul.carousel li span {
+        div.carousel div span {
           padding: 2px;
           border-radius: 8px 8px;
           font-size: 0.60em;
@@ -86,17 +88,17 @@
       }
     </style>
 
-    <ul class="carousel">
+    <div class="carousel">
         <template is="dom-repeat" items="{{scenes}}">
-          <li>
+          <div>
             <img id="[[item.id]]"
                  class="thumb"
-                 src="../../[[item.thumbnail]]"
+                 src="[[item.thumbnail]]"
                  on-tap="sceneSelected">
             <span class="name">[[item.name]]</span>
-          </li>
+          </div>
         </template>
-    </ul>
+    </div>
   </template>
 
   <script>
@@ -119,6 +121,13 @@
             thumbnail: 'assets/gallery/petra-thumbnail.jpg'
           },
           {
+            id: 'tajMahal',
+            name: 'Taj Mahal',
+            image: 'assets/gallery/taj-mahal.jpg',
+            preview: 'assets/gallery/taj-mahal-preview.jpg',
+            thumbnail: 'assets/gallery/taj-mahal-thumbnail.jpg'
+          },
+          {
             id: 'christTheRedeemer',
             name: 'Christ Redeemer',
             image: 'assets/gallery/christ-redeemer.jpg',
@@ -131,21 +140,14 @@
             image: 'assets/gallery/machu-picchu.jpg',
             preview: 'assets/gallery/machu-picchu-preview.jpg',
             thumbnail: 'assets/gallery/machu-picchu-thumbnail.jpg'
-          },
+          }/*,
           {
             id: 'chichenItza',
             name: 'Chichen Itza',
             image: 'assets/gallery/chichen-itza.jpg',
             preview: 'assets/gallery/chichen-itza-preview.jpg',
             thumbnail: 'assets/gallery/chichen-itza-thumbnail.jpg'
-          },
-          {
-            id: 'tajMahal',
-            name: 'Taj Mahal',
-            image: 'assets/gallery/taj-mahal.jpg',
-            preview: 'assets/gallery/taj-mahal-preview.jpg',
-            thumbnail: 'assets/gallery/taj-mahal-thumbnail.jpg'
-          }
+          }*/
         ];
       }
 
@@ -163,6 +165,7 @@
         console.debug(ImageGallery.is, 'sceneSelected', ev);
         console.debug(ImageGallery.is, 'sceneSelected model', ev.model);
         console.debug(ImageGallery.is, 'sceneSelected target', ev.target.parentNode);
+        console.debug(ImageGallery.is, 'this.rootPath = ', this.rootPath);
 
         let el = ev.target;
         let sib = el.nextElementSibling;

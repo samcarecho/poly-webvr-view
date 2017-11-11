@@ -476,6 +476,7 @@
       var Util = _dereq_('../util');
 
 // Save the executing script. This will be used to calculate the embed URL.
+      //var CURRENT_SCRIPT_SRC = Util.getCurrentScript().src;
       var CURRENT_SCRIPT_SRC = Util.getCurrentScript().src;
       var FAKE_FULLSCREEN_CLASS = 'vrview-fake-fullscreen';
 
@@ -488,6 +489,9 @@
        *    click (id): When a hotspot is clicked.
        */
       function Player(selector, contentInfo) {
+        console.debug('vrview.js', 'selector:', selector);
+        console.debug('vrview.js', 'contentInfo:', contentInfo);
+
         // Create a VR View iframe depending on the parameters.
         var iframe = this.createIframe_(contentInfo);
         this.iframe = iframe;
@@ -739,6 +743,7 @@
         var split = path.split('/');
         var rootSplit = split.slice(0, split.length - 2);
         var rootPath = rootSplit.join('/');
+        console.log('getEmbedUrl_ rootPath = ' + rootPath);
         return rootPath + '/index.html';
       };
 
@@ -1063,7 +1068,10 @@
         if (!document.currentScript) {
           console.warn('This browser does not support document.currentScript. Trying fallback.');
         }
+        //console.debug('getCurrentScript: ', location.href);
+        //console.debug('getCurrentScript: ', location.pathname);
         return document.currentScript || document.scripts[document.scripts.length - 1];
+        //return location.pathname;
       }
 
 

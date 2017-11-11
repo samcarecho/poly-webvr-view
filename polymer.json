@@ -19,23 +19,14 @@
     "rules": ["polymer-2"]
   },
   "builds": [{
-    "name": "es5-bundled",
-    "bundle": true,
-    "js": {"minify": true, "compile": true},
-    "css": {"minify": true},
-    "html": {"minify": true},
-    "addServiceWorker": true,
-    "addPushManifest": true,
-    "insertPrefetchLinks": true
-  },{
-    "name": "es6-bundled",
-    "bundle": true,
+    "name": "es6",
+    "bundle": false,
     "browserCapabilities": ["es2015"],
-    "js": {"minify": true},
-    "css": {"minify": true},
-    "html": {"minify": true},
-    "addServiceWorker": true,
+    "js": {"minify": false},
+    "css": {"minify": false},
+    "html": {"minify": false},
+    "addServiceWorker": false,
     "addPushManifest": true,
-    "insertPrefetchLinks": true
+    "insertPrefetchLinks": false
   }]
 }

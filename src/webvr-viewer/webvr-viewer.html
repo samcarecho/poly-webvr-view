@@ -39,14 +39,14 @@
         ready() {
           super.ready();
 
-          window.addEventListener('resize', (evt) => {
+          /*window.addEventListener('resize', (evt) => {
             console.debug(WebvrViewer.is, 'onResize', );
 
             this.width = window.innerWidth;
             this.height = window.innerHeight;
 
             this._resetPlayerDimensions(this.width, this.height);
-          });
+          });*/
         }
 
         connectedCallback() {
@@ -149,6 +149,8 @@
         }
 
         _resetPlayerDimensions(width, height) {
+
+          this.set('vrView', null);
           this.$.vrview.innerHTML = '';
           this. _setPlayerDimensions(width, height);
         }
